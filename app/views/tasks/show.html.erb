@@ -1,0 +1,14 @@
+<h1>
+  <%= @task.title %>
+</h1>
+
+<p>
+  Description: <%= @task.details %>
+</p>
+
+<p>
+  Completed: <%= @task.completed %>
+</p>
+
+<%= link_to "See all tasks",
+  tasks_path  %>
