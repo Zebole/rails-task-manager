@@ -24,7 +24,15 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
+    flash[:notice] = "The task has been updated!"
     redirect_to task_path(@task.id)
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    flash[:notice] = "The task has been deleted!"
+    redirect_to task_path
   end
 
   private
